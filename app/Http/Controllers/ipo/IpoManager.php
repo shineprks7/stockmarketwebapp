@@ -21,6 +21,10 @@ use App\Models\IpoDetail;
 use App\Models\IpoLotInformation;
 use App\Models\IpoTimeTable;
 
+use App\Models\IpoCompanyLeadManager;
+
+
+
 
 
 class IpoManager extends Controller
@@ -156,13 +160,11 @@ class IpoManager extends Controller
             $ipodetail->face_value = $face_value;
             $ipodetail->issue_price = $issue_price;
 
-            
-           if($listing_at)
-           {
-             $ipodetail->listing_at = $listing_at;
- 
-           }
-       
+
+            if ($listing_at) {
+              $ipodetail->listing_at = $listing_at;
+            }
+
             if ($offer_for_sale) {
               $ipodetail->offer_for_sale = $offer_for_sale;
             }
@@ -187,7 +189,7 @@ class IpoManager extends Controller
               $ipotimetabe->status = 'active';
 
               $ipotimetabe->save();
-            } 
+            }
 
 
             $querydata = array('companyid' => $company_id);
@@ -210,13 +212,11 @@ class IpoManager extends Controller
             $ipodetail->face_value = $face_value;
             $ipodetail->issue_price = $issue_price;
             $ipodetail->ipo_company_id = $company_id;
-            
-       if($listing_at)
-       {
-        $ipodetail->listing_at = $listing_at;
- 
-       }
-       
+
+            if ($listing_at) {
+              $ipodetail->listing_at = $listing_at;
+            }
+
 
             if ($offer_for_sale) {
               $ipodetail->offer_for_sale = $offer_for_sale;
@@ -249,7 +249,7 @@ class IpoManager extends Controller
               $ipotimetabe->status = 'active';
               $ipotimetabe->ipo_company_id = $company_id;
 
-              
+
 
               $ipotimetabe->save();
             }
@@ -306,8 +306,8 @@ class IpoManager extends Controller
   */
 
     //Requered Fields
-    
-   
+
+
 
     try {
       $query = $request->input('query');
@@ -327,7 +327,7 @@ class IpoManager extends Controller
       $refund_initiation = $request->input('refund_initiation');
       $shares_to_demat = $request->input('shares_to_demat');
       $listing_date = $request->input('listing_date');
-       
+
 
 
       if ($query) {
@@ -345,55 +345,41 @@ class IpoManager extends Controller
             $ipolotinfo->lots = $lots;
             $ipolotinfo->status = 'active';
 
-            if($min_lot)
-            {
+            if ($min_lot) {
               $ipolotinfo->min_lot = $min_lot;
-
             }
-            if($max_lot)
-            {
+            if ($max_lot) {
               $ipolotinfo->max_lot = $max_lot;
-
             }
-            if($min_cut_off)
-            {
+            if ($min_cut_off) {
               $ipolotinfo->min_cut_off = $min_cut_off;
-
-            } if($max_cut_off)
-            {
+            }
+            if ($max_cut_off) {
               $ipolotinfo->max_cut_off = $max_cut_off;
-
-            } if($min_shares)
-            {
+            }
+            if ($min_shares) {
               $ipolotinfo->min_shares = $min_shares;
-
             }
-            if($max_shares)
-            {
+            if ($max_shares) {
               $ipolotinfo->max_shares = $max_shares;
-
             }
-        
+
 
             $ipolotinfo->save();
 
             if ($exittimetable) {
               $ipotimetabe = IpoTimeTable::find($exittimetable->id);
-              if($allotment_date)
-              {
-              $ipotimetabe->allotment_date = $allotment_date;
+              if ($allotment_date) {
+                $ipotimetabe->allotment_date = $allotment_date;
               }
-              if($refund_initiation)
-              {
-              $ipotimetabe->refund_initiation = $refund_initiation;
+              if ($refund_initiation) {
+                $ipotimetabe->refund_initiation = $refund_initiation;
               }
-              if($shares_to_demat)
-              {
-              $ipotimetabe->shares_to_demat = $shares_to_demat;
+              if ($shares_to_demat) {
+                $ipotimetabe->shares_to_demat = $shares_to_demat;
               }
-              if($listing_date)
-              {
-              $ipotimetabe->listing_date = $listing_date;
+              if ($listing_date) {
+                $ipotimetabe->listing_date = $listing_date;
               }
 
               $ipotimetabe->save();
@@ -415,55 +401,41 @@ class IpoManager extends Controller
             $ipolotinfo->ipo_company_id = $company_id;
 
 
-            if($min_lot)
-            {
+            if ($min_lot) {
               $ipolotinfo->min_lot = $min_lot;
-
             }
-            if($max_lot)
-            {
+            if ($max_lot) {
               $ipolotinfo->max_lot = $max_lot;
-
             }
-            if($min_cut_off)
-            {
+            if ($min_cut_off) {
               $ipolotinfo->min_cut_off = $min_cut_off;
-
-            } if($max_cut_off)
-            {
+            }
+            if ($max_cut_off) {
               $ipolotinfo->max_cut_off = $max_cut_off;
-
-            } if($min_shares)
-            {
+            }
+            if ($min_shares) {
               $ipolotinfo->min_shares = $min_shares;
-
             }
-            if($max_shares)
-            {
+            if ($max_shares) {
               $ipolotinfo->max_shares = $max_shares;
-
             }
-        
+
 
             $ipolotinfo->save();
 
             if ($exittimetable) {
               $ipotimetabe = IpoTimeTable::find($exittimetable->id);
-              if($allotment_date)
-              {
-              $ipotimetabe->allotment_date = $allotment_date;
+              if ($allotment_date) {
+                $ipotimetabe->allotment_date = $allotment_date;
               }
-              if($refund_initiation)
-              {
-              $ipotimetabe->refund_initiation = $refund_initiation;
+              if ($refund_initiation) {
+                $ipotimetabe->refund_initiation = $refund_initiation;
               }
-              if($shares_to_demat)
-              {
-              $ipotimetabe->shares_to_demat = $shares_to_demat;
+              if ($shares_to_demat) {
+                $ipotimetabe->shares_to_demat = $shares_to_demat;
               }
-              if($listing_date)
-              {
-              $ipotimetabe->listing_date = $listing_date;
+              if ($listing_date) {
+                $ipotimetabe->listing_date = $listing_date;
               }
 
               $ipotimetabe->save();
@@ -476,7 +448,7 @@ class IpoManager extends Controller
 
 
             return response($responsearray);
-           
+
 
 
 
@@ -507,162 +479,180 @@ class IpoManager extends Controller
     //end of function
   }
 
-  
+
   public function IpoCompanyLogoUpload(Request $request)
   {
 
-      ini_set('max_execution_time', 120);
+    ini_set('max_execution_time', 120);
 
 
 
 
-      try{
+    try {
 
-        $uuid = Str::uuid()->toString();
+      $uuid = Str::uuid()->toString();
 
-        $company_id = $request->input('companyid');
+      $company_id = $request->input('companyid');
 
 
-  
-          if ($company_id) {
-  
 
-              if ($request->hasFile('imageicon')) {
+      if ($company_id) {
+
+
+        if ($request->hasFile('imageicon')) {
           //  Let's do everything here
 
 
-      
-                if ($request->file('imageicon')->isValid()) {
 
-                   $validated = $request->validate([
-                    'imageicon' => 'mimes:jpeg,png,jpg,gif,svg,webp|max:6000',
-                 ]);
-          
-           
-                  $extension = $request->imageicon->extension();
-           
-                  $originalname = $request->imageicon->getClientOriginalName();
-           
-           
-                  $imagename =$uuid.".".$extension;
-                  $url = Storage::url($uuid.".".$extension);
+          if ($request->file('imageicon')->isValid()) {
+
+            $validated = $request->validate([
+              'imageicon' => 'mimes:jpeg,png,jpg,gif,svg,webp|max:6000',
+            ]);
 
 
-                  $request->imageicon->storeAs('/public', $url);
+            $extension = $request->imageicon->extension();
+
+            $originalname = $request->imageicon->getClientOriginalName();
 
 
-                  $tempurl = "/storage/".$url;
-           
-
-                   $existipocompany = IpoCompany::find($company_id);
-
-                   $existipocompany->logo_url = $tempurl;
-
-                   $existipocompany->save();
+            $imagename = $uuid . "." . $extension;
+            $url = Storage::url($uuid . "." . $extension);
 
 
+            $request->imageicon->storeAs('/public', $url);
 
 
-                   return response(['success',$tempurl]);
+            $tempurl = "/storage/" . $url;
+
+
+            $existipocompany = IpoCompany::find($company_id);
+
+            $existipocompany->logo_url = $tempurl;
+
+            $existipocompany->save();
 
 
 
-                   
+
+            return response(['success', $tempurl]);
 
 
 
-               //end of -has image icon if
-              }
 
 
-              //end of -has company id if
-             }
-          
-            
-           //end of try
 
-           }
-      }
 
-        catch (\Exception $e) {
-          return $e->getMessage();
+            //end of -has image icon if
+          }
+
+
+          //end of -has company id if
         }
 
+
+        //end of try
+
       }
+    } catch (\Exception $e) {
+      return $e->getMessage();
+    }
+  }
 
 
-      public function createIpoCompanyAdditionalInfo(Request $request)
-      {
-    
-    
-        //basic Detail Creation
-        try {
-    
-          $query = $request->input('query');
-    
-          $formname = $request->input('formname');
-    
-          $page = $request->input('page');
-    
-    
-          $address = $request->input('address');
-          $phone = $request->input('phone');
-          $email = $request->input('email');
-          $website = $request->input('website');
+  public function createIpoCompanyAdditionalInfo(Request $request)
+  {
 
 
-         
-    
-          if (count($query) > 1) {
-    
-            $company_id = $query['companyid'];
-    
+    //basic Detail Creation
+    try {
 
-            if ($company_id) {
-    
-              $ipocompany = IpoCompany::find($company_id);
-    
-              if($address)
-              {
-              $ipocompany->address = $address;
-              }
-              if($phone)
-              {
-              $ipocompany->phone = $phone;
-              }
-              if($email)
-              {
-              $ipocompany->email = $email;
-              }
-              if($website)
-              {
-              $ipocompany->website = $website;
-              }
-              $ipocompany->save();
-    
-             
-    
-    
-    
-              $querydata = array('companyid' => $company_id);
-    
-    
-    
-              $responsearray = ['success', $querydata];
-    
-    
-              return response($responsearray);
-            }
-            else
-            {
-              return response(['fail','Company Id is Required']);
-            }
-          } 
-        } catch (\Exception $e) {
-          return $e->getMessage();
+      $query = $request->input('query');
+
+      $formname = $request->input('formname');
+
+      $page = $request->input('page');
+
+
+      $address = $request->input('address');
+      $phone = $request->input('phone');
+      $email = $request->input('email');
+      $website = $request->input('website');
+
+      $leadmanagerid = $request->input('leadmanagerid');
+
+
+
+      if (count($query) > 1) {
+
+        $company_id = $query['companyid'];
+
+
+        if ($company_id) {
+
+          $ipocompany = IpoCompany::find($company_id);
+
+          if ($address) {
+            $ipocompany->address = $address;
+          }
+          if ($phone) {
+            $ipocompany->phone = $phone;
+          }
+          if ($email) {
+            $ipocompany->email = $email;
+          }
+          if ($website) {
+            $ipocompany->website = $website;
+          }
+          $ipocompany->save();
+
+          if($leadmanagerid)
+          {
+           
+
+          $existipoleadmanager = IpoCompanyLeadManager::where('ipo_company_id', '=', $ipocompany->id)->first();
+
+
+          if($existipoleadmanager)
+          {
+            $ipoleadmanager = IpoCompanyLeadManager::find($existipoleadmanager->id);
+
+            $ipoleadmanager->ipo_lead_manager_id = $leadmanagerid;
+
+            $ipoleadmanager->save();
+
+          }
+          else
+          {
+            $ipoleadmanager = new IpoCompanyLeadManager();
+            $ipoleadmanager->ipo_company_id = $ipocompany->id;
+
+            $ipoleadmanager->ipo_lead_manager_id = $leadmanagerid;
+            $ipoleadmanager->save();
+
+
+          }
+        }
+
+
+
+
+
+
+          $querydata = array('companyid' => $company_id);
+
+
+
+          $responsearray = ['success', $querydata];
+
+
+          return response($responsearray);
+        } else {
+          return response(['fail', 'Company Id is Required']);
         }
       }
-    
-  
-
+    } catch (\Exception $e) {
+      return $e->getMessage();
+    }
+  }
 }

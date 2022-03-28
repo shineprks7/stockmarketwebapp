@@ -30,6 +30,12 @@ class IpoCompany extends Model
     {
         return $this->hasMany(IpoTimeTable::class);
     }
+    public function Ipoleadmanager()
+    {
+
+     return $this->belongsToMany(IpoLeadManager::class, 'ipocompany_ipoleadmanager');
+
+    }
 
    
 }

@@ -43,6 +43,18 @@ class StockRecommendationCsvManager extends Controller
         return response("Success");
 
     }
+
+    public function listCashScriptNames(Request $request)
+    {
+        $scriplistcash = CashScripNameList::limit(10)->get();
+
+
+       
+         $resultarr = ['success',$scriplistcash];
+
+        return response($resultarr);
+
+    }
     
     public function csvuploadscripcashnames(Request $request)
     {

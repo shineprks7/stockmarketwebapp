@@ -6,7 +6,7 @@
 
 
      <meta name="csrf-token" content="{{ csrf_token() }}">
-
+     
      <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
 <style>
      body::-webkit-scrollbar {
@@ -39,7 +39,8 @@ body::-webkit-scrollbar-thumb {
 
 
      </script>
-     
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   
+
      <script>
        
      

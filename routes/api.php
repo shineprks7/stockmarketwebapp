@@ -27,6 +27,11 @@ use App\Http\Controllers\ipo\IpoManager;
 
 use App\Http\Controllers\ipo\IpoLisingManager;
 
+use App\Http\Controllers\ipo\IpoLeadManagerController;
+
+
+
+
 use App\Http\Controllers\sessions\FormSessionManager;
 
 
@@ -83,7 +88,10 @@ Route::group(['prefix' => '', ['middleware' => ['XSS']], 'namespace' => ''], fun
 
     Route::post('/csvuploadscripcashnames', [StockRecommendationCsvManager::class, 'csvuploadscripcashnames']);
 
-    Route::get('/createcashscripnames', [StockRecommendationCsvManager::class, 'createcashscripnames']);
+    Route::get('/listCashScriptNames', [StockRecommendationCsvManager::class, 'listCashScriptNames']);
+
+    Route::post('/pullcashscriptnames', [StockRecommendationCsvManager::class, 'listCashScriptNames']);
+
 });
 
 
@@ -114,7 +122,32 @@ Route::group(['prefix' => '', ['middleware' => ['XSS']], 'namespace' => ''], fun
     Route::post('/ipoListingByCompany', [IpoLisingManager::class, 'ipoListingByCompany']);
 
     Route::post('/ipoListingAll', [IpoLisingManager::class, 'ipoListingAllArray']);
+
+    Route::post('/getleadmanagerbyid', [IpoLisingManager::class, 'leadManagerListById']);
+
+
+    Route::get('/testlistipos', [IpoLisingManager::class, 'testlistipos']);
+
+
+    Route::post('/listallleadmanagers', [IpoLisingManager::class, 'listAllLeadManagers']);
+
+        
+
+    
 });
+Route::group(['prefix' => '', ['middleware' => ['XSS']], 'namespace' => ''], function () {
+
+    Route::post('/createipoleadmanager', [IpoLeadManagerController::class, 'createLeadManager']);
+
+    Route::post('/createipoleadmanagerinfo', [IpoLeadManagerController::class, 'createLeadManagerAdditionalInfo']);
+
+    Route::post('/ipoleadmanagerlogoupload', [IpoLeadManagerController::class, 'LeadManagerLogoUpload']);
+
+
+
+    
+});
+
 
 Route::group(['prefix' => '', ['middleware' => ['XSS']], 'namespace' => ''], function () {
 

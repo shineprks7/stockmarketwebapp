@@ -242,18 +242,18 @@
 
 */
      
-    import numberinput from '../forminputs/numberinput.vue';
-    import optioninput from '../forminputs/optioninput.vue';
-    import textinput from '../forminputs/textinput.vue';
-    import richtext from '../forminputs/richtext.vue';
-    import dateinput from '../forminputs/dateinput.vue';
-    import selectoptions from '../forminputs/selectoptions.vue';
-    import checkboxinput from '../forminputs/checkboxinput.vue';
-    import comboboxinput from '../forminputs/comboboxinput.vue';
+    import numberinput from '../../forms/forminputs/numberinput.vue';
+    import optioninput from '../../forms/forminputs/optioninput.vue';
+    import textinput from '../../forms/forminputs/textinput.vue';
+    import richtext from '../../forms/forminputs/richtext.vue';
+    import dateinput from '../../forms/forminputs/dateinput.vue';
+    import selectoptions from '../../forms/forminputs/selectoptions.vue';
+    import checkboxinput from '../../forms/forminputs/checkboxinput.vue';
+    import comboboxinput from '../../forms/forminputs/comboboxinput.vue';
 
-    import textinputsingle from '../forminputs/textinputsingle.vue';
+    import textinputsingle from '../../forms/forminputs/textinputsingle.vue';
 
-    import imageuploader from '../forminputs/imageuploader.vue';
+    import imageuploader from '../../forms/forminputs/imageuploader.vue';
 
 
     

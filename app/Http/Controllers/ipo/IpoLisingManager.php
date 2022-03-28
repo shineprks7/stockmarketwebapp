@@ -18,6 +18,8 @@ use Illuminate\Support\Str;
 
 use App\Models\IpoCompany;
 
+use App\Models\IpoLeadManager;
+
 use App\Models\IpoDetail;
 use App\Models\IpoLotInformation;
 use App\Models\IpoTimeTable;
@@ -30,6 +32,42 @@ use App\Models\StockRecommendation;
 
 class IpoLisingManager extends Controller
 {
+    public function testlistipos(Request $request)
+    {
+        $ipodata = IpoCompany::where('id','=', '25')
+            ->with('IpoLeadmanager')->get();
+
+
+        return response(['success', $ipodata]);
+
+
+    }
+    public function listAllLeadManagers(Request $request)
+    {
+        $leadmanagers = IpoLeadManager::withCount('Ipocompanies')->get();
+
+
+        return response(['success', $leadmanagers]);
+
+
+    }
+    public function leadManagerListById(Request $request)
+    {
+        $query = $request->input('query');
+
+
+        if (count($query) > 1) {
+            if (array_key_exists('companyid', $query)) {
+                $companyid = $query['companyid'];
+
+
+                $leadmanager = IpoLeadManager::where('id', '=', $companyid)->first();
+
+
+                return response(['success', $leadmanager]);
+            }
+        }
+    }
 
     public function ipoListingByCompany(Request $request)
     {
@@ -43,6 +81,7 @@ class IpoLisingManager extends Controller
 
                 $ipodata = IpoCompany::where('id', '=', $companyid)->with('IpoDetails')
                     ->with('IpoLotInformations')
+                    ->with('IpoLeadmanager')
                     ->with('IpoTimeTables')->first();
 
 
@@ -50,6 +89,7 @@ class IpoLisingManager extends Controller
             }
         }
     }
+    
     public function ipoListingAllArray(Request $request)
     {
 
@@ -80,6 +120,8 @@ class IpoLisingManager extends Controller
                         ->orWhere('open_date', '=', 'null');
                 })->with('IpoDetails')
                     ->with('IpoLotInformations')
+                    ->with('IpoLeadmanager')
+
                     ->with('IpoTimeTables')->get();
 
 
@@ -89,6 +131,8 @@ class IpoLisingManager extends Controller
                     $query->where('open_date', '<', $currenttime);
                 })->with('IpoDetails')
                     ->with('IpoLotInformations')
+                    ->with('IpoLeadmanager')
+
                     ->with('IpoTimeTables')->get();
 
 
@@ -99,6 +143,8 @@ class IpoLisingManager extends Controller
                         ->where('open_date', '<=', $end_currenttyear);
                 })->with('IpoDetails')
                     ->with('IpoLotInformations')
+                    ->with('IpoLeadmanager')
+
                     ->with('IpoTimeTables')->get();
 
 
@@ -109,6 +155,8 @@ class IpoLisingManager extends Controller
                         ->where('open_date', '<=', $end_nextyear);
                 })->with('IpoDetails')
                     ->with('IpoLotInformations')
+                    ->with('IpoLeadmanager')
+
                     ->with('IpoTimeTables')->get();
 
 

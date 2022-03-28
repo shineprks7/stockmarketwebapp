@@ -168,6 +168,26 @@
                          
                               
                                },
+                                {
+                              id:2.6,
+                              type:'link',
+
+                              name:'nextyearipo',
+                              displayname:'CREATE IPO LEAD MANAGER',
+                              link:'http://127.0.0.1:8000/dashboard#/createleadmanager?page=1',
+                         
+                              
+                               },
+                                {
+                              id:2.7,
+                              type:'link',
+
+                              name:'nextyearipo',
+                              displayname:'IPO LEAD MANAGERS',
+                              link:'http://127.0.0.1:8000/dashboard#/createleadmanager?page=1',
+                         
+                              
+                               },
                                
                                ]
 

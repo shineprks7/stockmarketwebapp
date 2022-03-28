@@ -18,8 +18,12 @@ const routes = [
 
   { name:'ipolists', path: '/ipolists/:ipotime', component: () => import("../ipo/ipolist.vue") },
 
-  { name:'editipo', path: '/editipo', component: () => import("../ipo/updateipo.vue") },
 
+  { name:'editipo', path: '/editipo', component: () => import("../ipo/updateipo.vue") },
+  { name:'createleadmanager', path: '/createleadmanager', component: () => import("../ipo/createleadmanager.vue") },
+  { name:'leadmanagerlist', path: '/leadmanagerlist', component: () => import("../../flextables/test/leadmanagerlist.vue") },
+
+  
   { name:'tablecreator', path: '/tablecreator', component: () => import("../../test/multistep_updator/tablesimple.vue") },
 
   { name:'createipoform', path: '/createipoform', component: () => import("../ipo/createipoform.vue") },
@@ -28,9 +32,15 @@ const routes = [
 
   { name:'createrightsform', path: '/createrightsform', component: () => import("../rights/createrightsform.vue") },
 
-  
-  
-  
+  { name:'formsinglepagetest', path: '/formsinglepagetest', component: () => import("../../forms/formcreator/formsingletestcover.vue") },
+
+  { name:'formsinglepagetest2', path: '/formsinglepagetest2', component: () => import("../../forms/formcreator/formsinglepagetest2.vue") },
+
+  { name:'posteditor', path: '/posteditor', component: () => import("../posts/posteditor.vue") },
+
+  { name:'customeditor', path: '/customeditor', component: () => import("../posts/editor.vue") },
+
+  { name:'rowupdator', path: '/rowupdator', component: () => import("../../flextables/test/rowcover.vue") },
 
   
 
