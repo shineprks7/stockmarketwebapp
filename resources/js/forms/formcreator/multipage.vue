@@ -793,7 +793,7 @@
       },
       satisfyPreloadQuery:function()
       {
-         var satisfypreload = 'not defined';
+         var satisfypreload = '';
          for(var i=0;i<this.requiredQueryForPreLoad.length;i++)
          {
 

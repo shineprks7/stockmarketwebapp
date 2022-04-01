@@ -74,7 +74,8 @@ class IpoLisingManager extends Controller
         $query = $request->input('query');
 
 
-        if (count($query) > 1) {
+
+        if (count($query) > 0) {
             if (array_key_exists('companyid', $query)) {
                 $companyid = $query['companyid'];
 

@@ -1047,7 +1047,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     satisfyPreloadQuery: function satisfyPreloadQuery() {
-      var satisfypreload = 'not defined';
+      var satisfypreload = '';
 
       for (var i = 0; i < this.requiredQueryForPreLoad.length; i++) {
         if (this.queryList.hasOwnProperty(this.requiredQueryForPreLoad[i])) {

@@ -2998,6 +2998,12 @@ var routes = [{
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_flextables_test_rowcover_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../flextables/test/rowcover.vue */ "./resources/js/flextables/test/rowcover.vue"));
     }
+  }, {
+    name: 'dynocontent',
+    path: '/dynocontent',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_contentgenerator_contentcreators_createcontenttest_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../contentgenerator/contentcreators/createcontenttest.vue */ "./resources/js/contentgenerator/contentcreators/createcontenttest.vue"));
+    }
   }]
 }, {
   path: '/stafflogin',
@@ -3240,7 +3246,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.menu_bar_cover[data-v-4be53bdf]\r\n{\r\n    width:260px;\r\n    max-height:100vh;\r\n    min-height:100vh;\r\n    overflow:scroll;\r\n\r\n\r\n\r\n\r\n    border-right:1px solid brown;\r\n    border-bottom:1px solid brown;\r\n\r\n\r\n\r\n    padding:20px;\r\n\r\n    padding-left:0px;\r\n    \r\n    \r\n    background:#000;\r\n    color:#fff;\r\n    font-size:14px;\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar {\r\n  width: 4px;\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar-track {\r\n  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar-thumb {\r\n  background-color: darkgrey;\r\n  outline: 1px solid slategrey;\n}\n.navmenu[data-v-4be53bdf]\r\n{\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.menu_bar_cover[data-v-4be53bdf]\r\n{\r\n    width:260px;\r\n    max-height:100vh;\r\n    min-height:100vh;\r\n    overflow:scroll;\r\n\r\n\r\n\r\n\r\n    border-right:1px solid brown;\r\n    border-bottom:1px solid brown;\r\n\r\n\r\n\r\n    padding:20px;\r\n\r\n    padding-left:0px;\r\n    \r\n    \r\n    background:#5729DA;\r\n    color:#fff;\r\n    font-size:14px;\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar {\r\n  width: 4px;\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar-track {\r\n  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);\n}\n.menu_bar_cover[data-v-4be53bdf]::-webkit-scrollbar-thumb {\r\n  background-color: darkgrey;\r\n  outline: 1px solid slategrey;\n}\n.navmenu[data-v-4be53bdf]\r\n{\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -85767,7 +85773,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_dashboard_dashboardcomponents_underconstruction_vue":1,"resources_js_dashboard_stockrecommendationcomponents_createstockrecommendation_vue":1,"resources_js_dashboard_stockrecommendationcomponents_recommendationlist_vue":1,"resources_js_dashboard_stockrecommendationcomponents_uploadscriptcash_vue":1,"resources_js_dashboard_ipo_ipolist_vue":1,"resources_js_dashboard_ipo_updateipo_vue":1,"resources_js_dashboard_ipo_createleadmanager_vue":1,"resources_js_flextables_test_leadmanagerlist_vue":1,"resources_js_test_multistep_updator_tablesimple_vue":1,"resources_js_dashboard_ipo_createipoform_vue":1,"resources_js_dashboard_ncd_createncdform_vue":1,"resources_js_dashboard_rights_createrightsform_vue":1,"resources_js_forms_formcreator_formsingletestcover_vue":1,"resources_js_forms_formcreator_formsinglepagetest2_vue":1,"resources_js_dashboard_posts_posteditor_vue":1,"resources_js_dashboard_posts_editor_vue":1,"resources_js_flextables_test_rowcover_vue":1,"resources_js_dashboard_dashboardcomponents_adminlogin_vue":1,"resources_js_test_multistep_form_creator_formdynamictest_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_dashboard_dashboardcomponents_underconstruction_vue":1,"resources_js_dashboard_stockrecommendationcomponents_createstockrecommendation_vue":1,"resources_js_dashboard_stockrecommendationcomponents_recommendationlist_vue":1,"resources_js_dashboard_stockrecommendationcomponents_uploadscriptcash_vue":1,"resources_js_dashboard_ipo_ipolist_vue":1,"resources_js_dashboard_ipo_updateipo_vue":1,"resources_js_dashboard_ipo_createleadmanager_vue":1,"resources_js_flextables_test_leadmanagerlist_vue":1,"resources_js_test_multistep_updator_tablesimple_vue":1,"resources_js_dashboard_ipo_createipoform_vue":1,"resources_js_dashboard_ncd_createncdform_vue":1,"resources_js_dashboard_rights_createrightsform_vue":1,"resources_js_forms_formcreator_formsingletestcover_vue":1,"resources_js_forms_formcreator_formsinglepagetest2_vue":1,"resources_js_dashboard_posts_posteditor_vue":1,"resources_js_dashboard_posts_editor_vue":1,"resources_js_flextables_test_rowcover_vue":1,"resources_js_contentgenerator_contentcreators_createcontenttest_vue":1,"resources_js_dashboard_dashboardcomponents_adminlogin_vue":1,"resources_js_test_multistep_form_creator_formdynamictest_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -42,7 +42,8 @@ const routes = [
 
   { name:'rowupdator', path: '/rowupdator', component: () => import("../../flextables/test/rowcover.vue") },
 
-  
+  { name:'dynocontent', path: '/dynocontent', component: () => import("../../contentgenerator/contentcreators/createcontenttest.vue") },
+
 
  
   ],

@@ -42,10 +42,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {},
   data: function data() {
     return {};
+  },
+  directives: {
+    display: {
+      // directive definition
+      bind: function bind(el, binding, vNode) {
+        el.style.display = binding.value;
+      }
+    }
   },
   created: function created() {},
   mounted: function mounted() {},
@@ -21555,7 +21566,18 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "modal_default_wrapper d-flex justify-center align-center" },
-    [_c("div", { staticClass: "modal_alert" }, [_vm._t("default")], 2)]
+    [
+      _c(
+        "div",
+        { staticClass: "modal_alert" },
+        [
+          _c("div", { staticClass: "close_button" }),
+          _vm._v(" "),
+          _vm._t("default"),
+        ],
+        2
+      ),
+    ]
   )
 }
 var staticRenderFns = []
