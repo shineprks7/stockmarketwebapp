@@ -711,40 +711,20 @@ export default {
 }
 .form_submit_wrap {
 }
-.next_button {
-  width: 200px;
-  padding: 6px;
-  background: blue;
-  color: #fff;
-  background: linear-gradient(
-    267.55deg,
-    #f52b2b 0%,
-    rgba(112, 39, 230, 0.59) 100%
-  );
-  border-radius: 30px;
-  text-align: center;
-}
+
 .finish_button {
-  width: 200px;
-  padding: 6px;
-  color: #fff;
-  background: #a44c0c;
-  border-radius: 30px;
-  text-align: center;
+  min-width:200px;
+  padding:15px 30px;
+  color:#fff;
+font-size: 18px;
+
+ border-radius: 30px;
+ text-align:center;
+ background: #4A3AFF;
+box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+border-radius: 56px;
 }
-.previous_button {
-  width: 200px;
-  padding: 6px;
-  background: blue;
-  color: #fff;
-  background: linear-gradient(
-    267.55deg,
-    #f52b2b 0%,
-    rgba(112, 39, 230, 0.59) 100%
-  );
-  border-radius: 30px;
-  text-align: center;
-}
+
 .error_msg_required {
   color: red;
   font-size: 18px;
@@ -755,23 +735,5 @@ export default {
 .form_wrapper {
   width: 700px;
 }
-.page_circle {
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 50%;
-  background-color: #97c516;
-  margin-left: auto;
-  margin-right: auto;
-}
-.page_title_default {
-  text-align: center;
-  font-size: 20px;
-}
-.page_title_active {
-  color: #3325d3;
-}
-.page_title_inactive {
-  color: #000;
-}
+
 </style>

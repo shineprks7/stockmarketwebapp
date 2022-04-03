@@ -3419,6 +3419,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.validationfailedmsg = false;
       return true;
     }
+  }), _defineProperty(_methods, "meetRequiredFieldsByPageNumber", function meetRequiredFieldsByPageNumber(pagenum) {
+    var parsedpagenum = this.pagenum;
+    var formdata = this.formConditionallyFiltered;
+    var filter = formdata.filter(function (abc) {
+      return abc.page == parsedpagenum && abc.required == true && abc.value == "";
+    });
+
+    if (filter.length > 0) {
+      return false;
+    } else {
+      for (var i = 0; i < formdata.length; i++) {
+        if (this.forms[i].hasOwnProperty('validation')) {
+          if (this.forms[i].validation == false) {
+            this.validationfailedmsg = true;
+            return false;
+          }
+        }
+      }
+
+      this.validationfailedmsg = false;
+      return true;
+    }
   }), _defineProperty(_methods, "meetRequiredFields", function meetRequiredFields() {
     var formdata = this.formConditionallyFiltered;
     var filter = formdata.filter(function (abc) {

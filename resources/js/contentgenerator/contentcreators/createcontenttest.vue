@@ -11,6 +11,10 @@
       <paragraph
         :items="el.items"
         :elementid="el.uid"
+        :value ="el.value"
+        :presets = " el.presets ? el.presets :''"
+        :styles = "el.styles ? el.styles :''"
+
         v-else-if = "conditionalCheckElement(el, 'paragraph')"
       />
       <textblock
@@ -35,6 +39,8 @@
         v-else-if = "conditionalCheckElement(el, 'rowgroup')"
       />
     </div>
+
+
   </v-container>
 </template>
   
@@ -80,9 +86,21 @@ export default {
             { id: 3, name: "subscriptiondata", displayname: "Subscription" },
           ],
         },
+         {
+          uid: 2,
+          type: "associate",
+          eltype: "paragraph",
+          associateParentUid:1,
+          displayIfParentValue:'info',
+
+          value :'This is Paragraph. This Company is one of best company in the world',
+          presets:'bold primary',
+          styles :{ backgroundColor:'rgba(0,0,0,0.25)', width:'600px',padding:'50px 20px'},
+
+        },
 
         {
-          uid: 2,
+          uid: 3,
           type: "associate",
           eltype: "rowgroup",
 
@@ -196,6 +214,7 @@ export default {
             },
           ],
         },
+       
       ],
     };
   },

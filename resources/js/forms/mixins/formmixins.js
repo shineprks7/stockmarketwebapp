@@ -287,6 +287,41 @@ export default {
 
 
   },
+
+  meetRequiredFieldsByPageNumber: function (pagenum) {
+
+    let parsedpagenum = this.pagenum;
+
+    let formdata = this.formConditionallyFiltered;
+
+    var filter = formdata.filter(abc => abc.page == parsedpagenum && abc.required == true && abc.value == "");
+
+    if (filter.length > 0) {
+
+
+      return false;
+    }
+    else {
+      for (let i = 0; i < formdata.length; i++) {
+        if (this.forms[i].hasOwnProperty('validation')) {
+
+          if (this.forms[i].validation == false) {
+            this.validationfailedmsg = true;
+            return false;
+
+          }
+        }
+
+      }
+
+      this.validationfailedmsg = false;
+
+      return true;
+
+    }
+
+
+  },
   meetRequiredFields: function () {
 
     let formdata = this.formConditionallyFiltered;

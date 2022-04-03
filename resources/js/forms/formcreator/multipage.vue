@@ -2,37 +2,24 @@
 
 <template>
 
-      <v-container class="" >
+      <v-container class="default_main_wrapper" >
 
         
         <div v-if="pageRequirementPass() ">
 
           <header>
 
-              <div class="d-flex justify-space-around">
-                    <div class="page_title_wrap" v-for="page in this.pageData" :key="page.page">
-                        <div>
-                           <div v-if="meetRequiredFieldsByPreviousPage(page.page)"  v-on:click="goToParticularPage(page.page)" class="page_circle d-flex justify-center align-center" v-bind:class="page.page == parsedPageNumber ? 'page_circle_active':'page_circle_inactive'"> <span>{{page.page }}</span> </div>
+            <formpagenavtheme1 
 
-                           <div v-if="!meetRequiredFieldsByPreviousPage(page.page)"  class="page_circle page_circle_disabled d-flex justify-center align-center" > <span>{{page.page }}</span> </div>
+            :pageData = "this.pageDataForNavigation()"
 
-                           
-                        </div>
-                        <div v-if="pages < 6"  class="mt-4 page_title_default" v-bind:class="page.page == parsedPageNumber ? 'page_title_active':'page_title_inactive'">
-                            {{page.title}}
-                              
-                        </div>
-                        <div v-if="pages > 5 && parsedPageNumber == page.page"  class="mt-4 page_title_default" v-bind:class="page.page == parsedPageNumber ? 'page_title_active':'page_title_inactive'">
-                            {{page.title}}
-                              
-                        </div>
+            :activePageNUmber = "parsedPageNumber"
 
+            :pages = "this.pages"
 
+            v-on:changePageRequest = "goToParticularPage"
+            />
 
-                    </div>
-
-
-              </div>
 
           </header>
           <v-divider class="mt-4 mb-7">
@@ -288,8 +275,13 @@
     import emailinput from '../forminputs/emailinput.vue';
 
 
+    import formpagenavtheme1 from './formpagenavigation/navtheme1.vue';
+
+
      import get from 'lodash/get';
-    import formmixins from "../mixins/formmixins"
+    import formmixins from "../mixins/formmixins";
+
+
 
 
     export default {
@@ -308,6 +300,7 @@
      'imageuploader':imageuploader,
      'dynamicselectoptions':dynamicselectoptions,
      'emailinput':emailinput,
+     'formpagenavtheme1' :formpagenavtheme1,
 
     },
     mixins:[formmixins],
@@ -337,7 +330,7 @@
      },
      preLoadUrl:String,
      pages:{
-         type:Number,
+         type:[Number,String],
          required:true,
      },
      pageData:Array,
@@ -930,30 +923,21 @@
 
       this.preLoadComplete = true;
     },
-      meetRequiredFieldsByPreviousPage:function(pagenum)
-      {
+    pageDataForNavigation:function()
+    {
+      var data = this.pageData;
 
-        
-        if(pagenum > 1)
+        data.forEach(function (el, index,arr)
         {
-        var filter = this.forms.filter(abc => abc.page == (pagenum-1)  && abc.required == true && abc.value == "");
+          arr[index].meetRequiredField = this.meetRequiredFieldsByPageNumber(el.page);
 
-         if(filter.length > 0 )
-         {
-            return false;
-         }
-         else
-         {
-            return true;
-         }
-        }
-        else
-        {
-           return true;
-        }
+        }.bind(this));
 
-             
-      },
+        return data;
+
+
+    },
+      
         goToParticularPage:function(pagenum)
       {
 
@@ -987,6 +971,7 @@
               return parseInt(this.queryList.page);
         },
        
+       
 
 
 
@@ -1007,6 +992,17 @@
 </script>
 
 <style scoped>
+
+.default_main_wrapper
+{
+  background: #FFFFFF;
+
+border: 1px solid #EFF0F7;
+box-sizing: border-box;
+
+box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
+border-radius: 34px;
+}
 .error_page_form
 {
   width:100%;
@@ -1025,13 +1021,17 @@
 }
 .next_button
 {
-  width:200px;
-  padding:6px;
-  background:blue;
+  min-width:200px;
+  padding:15px 30px;
   color:#fff;
-  background: linear-gradient(267.55deg, #F52B2B 0%, rgba(112, 39, 230, 0.59) 100%);
-border-radius: 30px;
-text-align:center;
+font-size: 18px;
+
+ border-radius: 30px;
+ text-align:center;
+ background: #4A3AFF;
+box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+border-radius: 56px;
+
 
 }
 .finish_button
@@ -1046,13 +1046,16 @@ text-align:center;
 }
 .previous_button
 {
-   width:200px;
-  padding:6px;
-  background:blue;
+   min-width:200px;
+  padding:15px 30px;
   color:#fff;
-  background: linear-gradient(267.55deg, #F52B2B 0%, rgba(112, 39, 230, 0.59) 100%);
-  border-radius: 30px;
+font-size: 18px;
+
+ border-radius: 30px;
  text-align:center;
+ background: #4A3AFF;
+box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
+border-radius: 56px;
 
 }
 .error_msg_required
@@ -1067,55 +1070,9 @@ text-align:center;
 .form_wrapper
 {
   width:700px;
+  box-sizing: border-box;
+  padding:20px 50px;
 }
-.page_circle
-{
-  width:50px;
-  height:50px;
-  font-size:20px;
-  border-radius:50%;
-  margin-left:auto;
-  margin-right:auto;
 
- }
- .page_circle_disabled
- {
-   background-color:#ddd;
-color:#fff;
-
-
- }
- .page_circle_active
- {
-
-background-color:#3325D3;
-color:#fff;
-
- }
- .page_circle_inactive
- {
-background-color:#97C516;
-color:#ddd;
-
-
- }
- .page_title_default
- {
-   text-align:center;
-   font-size:20px;
-   
-
- }
- .page_title_active
- {
-   color:#3325D3;
-
-
- }
- .page_title_inactive
- {
-   color:#000;
-   
- }
 
 </style>

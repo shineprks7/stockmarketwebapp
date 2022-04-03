@@ -2945,12 +2945,6 @@ var routes = [{
       return __webpack_require__.e(/*! import() */ "resources_js_flextables_test_leadmanagerlist_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../flextables/test/leadmanagerlist.vue */ "./resources/js/flextables/test/leadmanagerlist.vue"));
     }
   }, {
-    name: 'tablecreator',
-    path: '/tablecreator',
-    component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_test_multistep_updator_tablesimple_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../test/multistep_updator/tablesimple.vue */ "./resources/js/test/multistep_updator/tablesimple.vue"));
-    }
-  }, {
     name: 'createipoform',
     path: '/createipoform',
     component: function component() {
@@ -2968,6 +2962,37 @@ var routes = [{
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_dashboard_rights_createrightsform_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../rights/createrightsform.vue */ "./resources/js/dashboard/rights/createrightsform.vue"));
     }
+  }, // Tests and Experiments
+  {
+    name: 'dynocontent',
+    path: '/dynocontent',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_contentgenerator_contentcreators_createcontenttest_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../contentgenerator/contentcreators/createcontenttest.vue */ "./resources/js/contentgenerator/contentcreators/createcontenttest.vue"));
+    }
+  }, {
+    name: 'tablecreator',
+    path: '/tablecreator',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_test_multistep_updator_tablesimple_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../test/multistep_updator/tablesimple.vue */ "./resources/js/test/multistep_updator/tablesimple.vue"));
+    }
+  }, {
+    name: 'rowupdator',
+    path: '/rowupdator',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_flextables_test_rowcover_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../flextables/test/rowcover.vue */ "./resources/js/flextables/test/rowcover.vue"));
+    }
+  }, {
+    name: 'customeditor',
+    path: '/customeditor',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_dashboard_posts_editor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../posts/editor.vue */ "./resources/js/dashboard/posts/editor.vue"));
+    }
+  }, {
+    name: 'posteditor',
+    path: '/posteditor',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_dashboard_posts_posteditor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../posts/posteditor.vue */ "./resources/js/dashboard/posts/posteditor.vue"));
+    }
   }, {
     name: 'formsinglepagetest',
     path: '/formsinglepagetest',
@@ -2979,30 +3004,6 @@ var routes = [{
     path: '/formsinglepagetest2',
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_forms_formcreator_formsinglepagetest2_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../forms/formcreator/formsinglepagetest2.vue */ "./resources/js/forms/formcreator/formsinglepagetest2.vue"));
-    }
-  }, {
-    name: 'posteditor',
-    path: '/posteditor',
-    component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_dashboard_posts_posteditor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../posts/posteditor.vue */ "./resources/js/dashboard/posts/posteditor.vue"));
-    }
-  }, {
-    name: 'customeditor',
-    path: '/customeditor',
-    component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_dashboard_posts_editor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../posts/editor.vue */ "./resources/js/dashboard/posts/editor.vue"));
-    }
-  }, {
-    name: 'rowupdator',
-    path: '/rowupdator',
-    component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_flextables_test_rowcover_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../flextables/test/rowcover.vue */ "./resources/js/flextables/test/rowcover.vue"));
-    }
-  }, {
-    name: 'dynocontent',
-    path: '/dynocontent',
-    component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_contentgenerator_contentcreators_createcontenttest_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../../contentgenerator/contentcreators/createcontenttest.vue */ "./resources/js/contentgenerator/contentcreators/createcontenttest.vue"));
     }
   }]
 }, {
@@ -85773,7 +85774,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_dashboard_dashboardcomponents_underconstruction_vue":1,"resources_js_dashboard_stockrecommendationcomponents_createstockrecommendation_vue":1,"resources_js_dashboard_stockrecommendationcomponents_recommendationlist_vue":1,"resources_js_dashboard_stockrecommendationcomponents_uploadscriptcash_vue":1,"resources_js_dashboard_ipo_ipolist_vue":1,"resources_js_dashboard_ipo_updateipo_vue":1,"resources_js_dashboard_ipo_createleadmanager_vue":1,"resources_js_flextables_test_leadmanagerlist_vue":1,"resources_js_test_multistep_updator_tablesimple_vue":1,"resources_js_dashboard_ipo_createipoform_vue":1,"resources_js_dashboard_ncd_createncdform_vue":1,"resources_js_dashboard_rights_createrightsform_vue":1,"resources_js_forms_formcreator_formsingletestcover_vue":1,"resources_js_forms_formcreator_formsinglepagetest2_vue":1,"resources_js_dashboard_posts_posteditor_vue":1,"resources_js_dashboard_posts_editor_vue":1,"resources_js_flextables_test_rowcover_vue":1,"resources_js_contentgenerator_contentcreators_createcontenttest_vue":1,"resources_js_dashboard_dashboardcomponents_adminlogin_vue":1,"resources_js_test_multistep_form_creator_formdynamictest_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_dashboard_dashboardcomponents_underconstruction_vue":1,"resources_js_dashboard_stockrecommendationcomponents_createstockrecommendation_vue":1,"resources_js_dashboard_stockrecommendationcomponents_recommendationlist_vue":1,"resources_js_dashboard_stockrecommendationcomponents_uploadscriptcash_vue":1,"resources_js_dashboard_ipo_ipolist_vue":1,"resources_js_dashboard_ipo_updateipo_vue":1,"resources_js_dashboard_ipo_createleadmanager_vue":1,"resources_js_flextables_test_leadmanagerlist_vue":1,"resources_js_dashboard_ipo_createipoform_vue":1,"resources_js_dashboard_ncd_createncdform_vue":1,"resources_js_dashboard_rights_createrightsform_vue":1,"resources_js_contentgenerator_contentcreators_createcontenttest_vue":1,"resources_js_test_multistep_updator_tablesimple_vue":1,"resources_js_flextables_test_rowcover_vue":1,"resources_js_dashboard_posts_editor_vue":1,"resources_js_dashboard_posts_posteditor_vue":1,"resources_js_forms_formcreator_formsingletestcover_vue":1,"resources_js_forms_formcreator_formsinglepagetest2_vue":1,"resources_js_dashboard_dashboardcomponents_adminlogin_vue":1,"resources_js_test_multistep_form_creator_formdynamictest_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -24,7 +24,6 @@ const routes = [
   { name:'leadmanagerlist', path: '/leadmanagerlist', component: () => import("../../flextables/test/leadmanagerlist.vue") },
 
   
-  { name:'tablecreator', path: '/tablecreator', component: () => import("../../test/multistep_updator/tablesimple.vue") },
 
   { name:'createipoform', path: '/createipoform', component: () => import("../ipo/createipoform.vue") },
 
@@ -32,26 +31,30 @@ const routes = [
 
   { name:'createrightsform', path: '/createrightsform', component: () => import("../rights/createrightsform.vue") },
 
-  { name:'formsinglepagetest', path: '/formsinglepagetest', component: () => import("../../forms/formcreator/formsingletestcover.vue") },
+  
+
+
+
+
+// Tests and Experiments
+
+{ name:'dynocontent', path: '/dynocontent', component: () => import("../../contentgenerator/contentcreators/createcontenttest.vue") },
+{ name:'tablecreator', path: '/tablecreator', component: () => import("../../test/multistep_updator/tablesimple.vue") },
+
+{ name:'rowupdator', path: '/rowupdator', component: () => import("../../flextables/test/rowcover.vue") },
+{ name:'customeditor', path: '/customeditor', component: () => import("../posts/editor.vue") },
+{ name:'posteditor', path: '/posteditor', component: () => import("../posts/posteditor.vue") },
+{ name:'formsinglepagetest', path: '/formsinglepagetest', component: () => import("../../forms/formcreator/formsingletestcover.vue") },
 
   { name:'formsinglepagetest2', path: '/formsinglepagetest2', component: () => import("../../forms/formcreator/formsinglepagetest2.vue") },
-
-  { name:'posteditor', path: '/posteditor', component: () => import("../posts/posteditor.vue") },
-
-  { name:'customeditor', path: '/customeditor', component: () => import("../posts/editor.vue") },
-
-  { name:'rowupdator', path: '/rowupdator', component: () => import("../../flextables/test/rowcover.vue") },
-
-  { name:'dynocontent', path: '/dynocontent', component: () => import("../../contentgenerator/contentcreators/createcontenttest.vue") },
-
 
  
   ],
 },
+
 { path: '/stafflogin', name:'stafflogin', component: () => import("../dashboardcomponents/adminlogin.vue"),	 props: true},
 
 { path: '/dynamicformtest', name:'dynamicformtest', component: () => import("../../test/multistep_form_creator/formdynamictest.vue"),	 props: true},
-
 
 
 

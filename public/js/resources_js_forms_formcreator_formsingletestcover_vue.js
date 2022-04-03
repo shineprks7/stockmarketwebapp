@@ -3222,6 +3222,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.validationfailedmsg = false;
       return true;
     }
+  }), _defineProperty(_methods, "meetRequiredFieldsByPageNumber", function meetRequiredFieldsByPageNumber(pagenum) {
+    var parsedpagenum = this.pagenum;
+    var formdata = this.formConditionallyFiltered;
+    var filter = formdata.filter(function (abc) {
+      return abc.page == parsedpagenum && abc.required == true && abc.value == "";
+    });
+
+    if (filter.length > 0) {
+      return false;
+    } else {
+      for (var i = 0; i < formdata.length; i++) {
+        if (this.forms[i].hasOwnProperty('validation')) {
+          if (this.forms[i].validation == false) {
+            this.validationfailedmsg = true;
+            return false;
+          }
+        }
+      }
+
+      this.validationfailedmsg = false;
+      return true;
+    }
   }), _defineProperty(_methods, "meetRequiredFields", function meetRequiredFields() {
     var formdata = this.formConditionallyFiltered;
     var filter = formdata.filter(function (abc) {
@@ -5308,7 +5330,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.error_page_form[data-v-4483e192] {\r\n  width: 100%;\r\n  height: 100vh;\n}\n.error_page_message[data-v-4483e192] {\r\n  font-size: 25px;\r\n  font-weight: bold;\r\n  color: blue;\n}\n.form_submit_wrap[data-v-4483e192] {\n}\n.next_button[data-v-4483e192] {\r\n  width: 200px;\r\n  padding: 6px;\r\n  background: blue;\r\n  color: #fff;\r\n  background: linear-gradient(\r\n    267.55deg,\r\n    #f52b2b 0%,\r\n    rgba(112, 39, 230, 0.59) 100%\r\n  );\r\n  border-radius: 30px;\r\n  text-align: center;\n}\n.finish_button[data-v-4483e192] {\r\n  width: 200px;\r\n  padding: 6px;\r\n  color: #fff;\r\n  background: #a44c0c;\r\n  border-radius: 30px;\r\n  text-align: center;\n}\n.previous_button[data-v-4483e192] {\r\n  width: 200px;\r\n  padding: 6px;\r\n  background: blue;\r\n  color: #fff;\r\n  background: linear-gradient(\r\n    267.55deg,\r\n    #f52b2b 0%,\r\n    rgba(112, 39, 230, 0.59) 100%\r\n  );\r\n  border-radius: 30px;\r\n  text-align: center;\n}\n.error_msg_required[data-v-4483e192] {\r\n  color: red;\r\n  font-size: 18px;\n}\n.input_class_style1[data-v-4483e192] {\r\n  width: 500px;\n}\n.form_wrapper[data-v-4483e192] {\r\n  width: 700px;\n}\n.page_circle[data-v-4483e192] {\r\n  width: 50px;\r\n  height: 50px;\r\n  font-size: 20px;\r\n  border-radius: 50%;\r\n  background-color: #97c516;\r\n  margin-left: auto;\r\n  margin-right: auto;\n}\n.page_title_default[data-v-4483e192] {\r\n  text-align: center;\r\n  font-size: 20px;\n}\n.page_title_active[data-v-4483e192] {\r\n  color: #3325d3;\n}\n.page_title_inactive[data-v-4483e192] {\r\n  color: #000;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.error_page_form[data-v-4483e192] {\r\n  width: 100%;\r\n  height: 100vh;\n}\n.error_page_message[data-v-4483e192] {\r\n  font-size: 25px;\r\n  font-weight: bold;\r\n  color: blue;\n}\n.form_submit_wrap[data-v-4483e192] {\n}\n.finish_button[data-v-4483e192] {\r\n  min-width:200px;\r\n  padding:15px 30px;\r\n  color:#fff;\r\nfont-size: 18px;\r\n\r\n border-radius: 30px;\r\n text-align:center;\r\n background: #4A3AFF;\r\nbox-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);\r\nborder-radius: 56px;\n}\n.error_msg_required[data-v-4483e192] {\r\n  color: red;\r\n  font-size: 18px;\n}\n.input_class_style1[data-v-4483e192] {\r\n  width: 500px;\n}\n.form_wrapper[data-v-4483e192] {\r\n  width: 700px;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
